@@ -1,0 +1,11 @@
+{
+  "compilerOptions": { 
+    "experimentalDecorators": true, 
+    "emitDecoratorMetadata": true,
+    "types": ["cypress", "cypress-file-upload"]
+  },
+  "exclude": [
+    "../wwwroot/app",
+    "node_modules/*"
+  ]
+}

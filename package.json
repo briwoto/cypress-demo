@@ -1,0 +1,28 @@
+{
+  "name": "cypress-test-suite",
+  "version": "1.0.0",
+  "description": "A portable testing suite for cypress with reusable methods for ease of test automation",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.17.2",
+    "cypress": "^9.4.1",
+    "cypress-file-upload": "^5.0.8",
+    "dotenv": "^16.0.0",
+    "mochawesome": "^7.0.1",
+    "prettier": "^2.5.1"
+  },
+  "scripts": {
+    "test": "cypress run --headless",
+    "open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briwoto/cypress-test-suite.git"
+  },
+  "author": "Rahul Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/briwoto/cypress-test-suite/issues"
+  },
+  "homepage": "https://github.com/briwoto/cypress-test-suite#readme"
+}

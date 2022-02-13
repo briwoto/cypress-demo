@@ -1,0 +1,26 @@
+name: Cypress Test Suite
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: 
+      - main
+
+env:
+  PASSWORD : ${{ secrets.PASSWORD }}
+  BASE_URL_API: ${{ secrets.BASE_URL_API  }}
+
+jobs:
+  run-all-cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout cypress
+        uses: actions/checkout@v2
+
+      - name: Run all cases
+        uses: cypress-io/github-action@v2
+        with:
+          env: PASSWORD=$PASSWORD,BASE_URL_API=$BASE_URL_API
+          start: npm test 
