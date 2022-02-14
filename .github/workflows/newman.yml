@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@master
       
       - name: Get newman dependencies
-        uses: mat-ball/newman-action@master
+        uses: matt-ball/newman-action@master
         with:
           collection: $COLLECTION
           environment: $API_ENV
