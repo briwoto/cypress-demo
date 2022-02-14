@@ -8,10 +8,6 @@ on:
     branches:
       - main
 
-env:
-  COLLECTION: ${{ secrets.COLLECTION }}
-  API_ENV: ${{ secrets.API_ENV }}
-
 jobs:
   newman:
     runs-on: ubuntu-latest
@@ -22,6 +18,7 @@ jobs:
       - name: Get newman dependencies
         uses: matt-ball/newman-action@master
         with:
-          collection: $COLLECTION
-          environment: $API_ENV
+          apiKey: ${{ secrets.API_KEY }}
+          collection: ${{ secrets.COLLECTION }}
+          environment: ${{ secrets.API_ENV }}
 
