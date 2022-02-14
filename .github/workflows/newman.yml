@@ -1,0 +1,27 @@
+name: Run Api Cases using newman
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+env:
+  COLLECTION: ${{ secrets.COLLECTION }}
+  API_ENV: ${{ secrets.API_ENV }}
+
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout newman
+        uses: actions/checkout@master
+      
+      - name: Get newman dependencies
+        uses: mat-ball/newman-action@master
+        with:
+          collection: $COLLECTION
+          environment: $API_ENV
+
