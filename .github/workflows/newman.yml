@@ -1,0 +1,24 @@
+name: Run Api Cases using newman
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout newman
+        uses: actions/checkout@master
+      
+      - name: Get newman dependencies
+        uses: matt-ball/newman-action@master
+        with:
+          apiKey: ${{ secrets.API_KEY }}
+          collection: ${{ secrets.COLLECTION }}
+          environment: ${{ secrets.API_ENV }}
+
